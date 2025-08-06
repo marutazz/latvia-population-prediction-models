@@ -41,13 +41,6 @@ def translate_text_azure(text_list, from_lang="lv", to_lang="en"):
     return translations
 
 def load_and_merge(folder_path: str) -> pd.DataFrame:
-    """
-    1) Loads all .csv/.xlsx files in folder_path
-    2) Translates column names & string cells from lv→en
-    3) Extracts Year from filename
-    4) Merges into one DataFrame
-    5) Adds Total_Population_Year & Percent_of_Year
-    """
     dfs = []
     for fname in os.listdir(folder_path):
         if not fname.lower().endswith((".csv", ".xlsx")):
